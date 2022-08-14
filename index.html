@@ -46,22 +46,83 @@
 
 <!--main content-->
 <main class="main">
+
+<!--    main header-->
     <header class="main__header">
         <div>
-            <div>
-                <button></button>
-                <button></button>
+            <div class="main__header-btn">
+                <button>Удалить</button>
+                <button>Добавить в архив</button>
             </div>
             <div>
-                <button></button>
-                <button></button>
+                <nav class="main__header-nav">
+                    <ul>
+                        <li>Непрочитанные</li>
+                        <li>Архив</li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="main__header-search">
+                <input type="text">
+                <button>Искать →</button>
             </div>
         </div>
-        <div></div>
     </header>
+<!--            main content sms-->
+    <section class="main__sms">
+        <ul class="sms__list">
+            <li class="sms__item">
+                <div class="sms__input">
+                    <input type="checkbox" class="sms__check">
+                </div>
+                <div class="sms__user">
+                    <img src="img/icons/user.png" alt="user" class="sms__user-photo">
+                    <img src="img/icons/online.png" alt="online" class="sms__user-online">
+                    <p class="sms__user-name">Александр Антонов</p>
+                </div>
+                <div class="sms__main-info">
+                    <img src="img/icons/arc.png" alt="logo" class="sms__arc">
+                    <p class="sms__main-text">
+                        а почему на ноже нет ни одной царапины?
+                    </p>
+                </div>
+                <div class="sms__info">
+                    <p class="sms__data">13/04/2018</p>
+                    <p class="sms__time">14:02</p>
+                </div>
+            </li>
+        </ul>
+    </section>
+    <section class="main__pages">
+        <a href="#" class="page__link">1</a>
+    </section>
 </main>
 
 <!--container adaptive/responsible-->
 </div>
+
+<template id="sms__item">
+    <li class="sms__item">
+        <div class="sms__input">
+            <input type="checkbox" class="sms__check">
+        </div>
+        <div class="sms__user">
+            <img src="img/icons/user.png" alt="user" class="sms__user-photo">
+            <img src="img/icons/online.png" alt="online" class="sms__user-online">
+            <p class="sms__user-name">{{userName}}</p>
+        </div>
+        <div class="sms__main-info">
+            <img src="img/icons/arc.png" alt="logo" class="sms__arc">
+            <p class="sms__main-text">{{mainText}}</p>
+        </div>
+        <div class="sms__info">
+            <p class="sms__data">{{smsData}}</p>
+            <p class="sms__time">{{smsTime}}</p>
+        </div>
+    </li>
+</template>
+
+<script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
