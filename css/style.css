@@ -163,30 +163,53 @@ a {
 .sms__item {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    height: 59px;
 }
-.sms__input {}
+.sms__input {
+    padding: 15px 0 0 0;
+    margin: 0 19px 0 0;
+}
 .sms__user {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    position: relative;
 }
 .sms__user-photo {
+    margin: 0 16px 0 0;
     width: 40px;
 }
 .sms__user-online {
-    width: 8px;
+    width: 13px;
+    position: absolute;
+    top: 1px;
+    left: 29px;
 }
 .sms__user-name {
     max-width: 146px;
+    overflow: hidden;
+    margin: 0 6px 0 0;
+    text-decoration: underline;
+    font-weight: 700;
 }
 .sms__main-info {}
-.sms__arc {}
+.sms__arc {
+    height: 16px;
+    margin: 0 16px 0 0;
+}
 .sms__main-text {}
 .sms__info {
-    display: flex;
-    flex-direction: row;
+    min-width: 246px;
+    text-align: end;
 }
-.sms__data {}
-.sms__time {}
+.sms__data {
+    margin: 0 20px 0 0;
+    text-align: end;
+}
+.sms__time {
+    text-align: end;
+}
 
 /*pages style*/
 .main__pages {}
