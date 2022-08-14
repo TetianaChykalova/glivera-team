@@ -6,12 +6,16 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
     <title>Glivera team</title>
 </head>
 <body>
 <!--container adaptive/responsible-->
-<div class="container">
+<div class="container content">
 
 <!--header (left part on web / burger on mobile)-->
 <header class="header">
@@ -22,7 +26,7 @@
         <nav class="header__nav">
             <ul class="nav__list">
                 <li class="nav__item">
-                    <a href="#">Сообщения<span id="sms-count"></span></a>
+                    <a href="#">Сообщения</a><span id="sms-count"></span>
                 </li>
                 <li class="nav__item">
                     <a href="#">Профиль</a>
@@ -40,7 +44,9 @@
         </nav>
     </div>
     <div class="header__div">
-        <a class="header__buy" href="#">Купить подписку</a>
+        <div class="header__buy-div">
+            <a class="header__buy" href="#">Купить подписку</a>
+        </div>
     </div>
 </header>
 
@@ -49,20 +55,20 @@
 
 <!--    main header-->
     <header class="main__header">
-        <div>
-            <div class="main__header-btn">
+        <div class="top-s">
+            <div class="main__header-btn main-left">
                 <button>Удалить</button>
                 <button>Добавить в архив</button>
             </div>
             <div>
-                <nav class="main__header-nav">
-                    <ul>
-                        <li>Непрочитанные</li>
-                        <li>Архив</li>
-                    </ul>
+                <nav class="main__header-nav main-center">
+                    <a href="#">Непрочитанные</a>
+                    <a href="#">Архив</a>
                 </nav>
             </div>
-            <div class="main__header-search">
+        </div>
+        <div class="bottom-s">
+            <div class="main__header-search main-right">
                 <input type="text">
                 <button>Искать →</button>
             </div>
@@ -72,30 +78,38 @@
     <section class="main__sms">
         <ul class="sms__list">
             <li class="sms__item">
-                <div class="sms__input">
-                    <input type="checkbox" class="sms__check">
+                <div class="main-left">
+                    <div class="sms__input">
+                        <input type="checkbox">
+                    </div>
+                    <div class="sms__user">
+                        <img src="img/icons/user.png" alt="user" class="sms__user-photo">
+                        <img src="img/icons/online.png" alt="online" class="sms__user-online">
+                        <p class="sms__user-name">Александр Антонов</p>
+                        <img src="img/icons/arc.png" alt="logo" class="sms__arc">
+                    </div>
                 </div>
-                <div class="sms__user">
-                    <img src="img/icons/user.png" alt="user" class="sms__user-photo">
-                    <img src="img/icons/online.png" alt="online" class="sms__user-online">
-                    <p class="sms__user-name">Александр Антонов</p>
+                <div class="main-center">
+                    <div class="sms__main-info">
+                        <p class="sms__main-text">
+                            а почему на ноже нет ни одной царапины?
+                        </p>
+                    </div>
                 </div>
-                <div class="sms__main-info">
-                    <img src="img/icons/arc.png" alt="logo" class="sms__arc">
-                    <p class="sms__main-text">
-                        а почему на ноже нет ни одной царапины?
-                    </p>
-                </div>
-                <div class="sms__info">
-                    <p class="sms__data">13/04/2018</p>
-                    <p class="sms__time">14:02</p>
+                <div class="main-right">
+                    <div class="sms__info">
+                        <p class="sms__data">13/04/2018</p>
+                        <p class="sms__time">14:02</p>
+                    </div>
                 </div>
             </li>
         </ul>
+
+<!--        pages-->
     </section>
-    <section class="main__pages">
+    <footer class="main__pages">
         <a href="#" class="page__link">1</a>
-    </section>
+    </footer>
 </main>
 
 <!--container adaptive/responsible-->
@@ -103,21 +117,27 @@
 
 <template id="sms__item">
     <li class="sms__item">
-        <div class="sms__input">
-            <input type="checkbox" class="sms__check">
+        <div class="main-left">
+            <div class="sms__input">
+                <input type="checkbox" class="sms__check">
+            </div>
+            <div class="sms__user">
+                <img src="img/icons/user.png" alt="user" class="sms__user-photo">
+                <img src="img/icons/online.png" alt="online" class="sms__user-online">
+                <p class="sms__user-name">{{userName}}</p>
+                <img src="img/icons/arc.png" alt="logo" class="sms__arc">
+            </div>
         </div>
-        <div class="sms__user">
-            <img src="img/icons/user.png" alt="user" class="sms__user-photo">
-            <img src="img/icons/online.png" alt="online" class="sms__user-online">
-            <p class="sms__user-name">{{userName}}</p>
+        <div class="main-center">
+            <div class="sms__main-info">
+                <p class="sms__main-text">{{mainText}}</p>
+            </div>
         </div>
-        <div class="sms__main-info">
-            <img src="img/icons/arc.png" alt="logo" class="sms__arc">
-            <p class="sms__main-text">{{mainText}}</p>
-        </div>
-        <div class="sms__info">
-            <p class="sms__data">{{smsData}}</p>
-            <p class="sms__time">{{smsTime}}</p>
+        <div class="main-right">
+            <div class="sms__info">
+                <p class="sms__data">{{smsData}}</p>
+                <p class="sms__time">{{smsTime}}</p>
+            </div>
         </div>
     </li>
 </template>
