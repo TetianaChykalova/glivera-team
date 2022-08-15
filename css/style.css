@@ -59,20 +59,42 @@ a {
 .header__nav {}
 .nav__list {}
 .nav__item {
+    display: flex;
+    flex-direction: column;
     margin: 0 0 24px 0;
 }
-.header__buy-div {
+.orange-bold {
+    color: #DB9351;
+    font-weight: 700;
+}
+.orange {
+    color: #DB9351;
+}
+.nav__item:nth-child(odd) {
+    margin: 0 0 50px 0;
+}
+.nav__item:nth-child(2)::before,
+.nav__item:nth-child(4)::before {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background: #212121;
+    margin: 0 0 50px 0;
+}
+.header__div {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .header__buy {
     font-weight: 700;
-    justify-content: center;
 }
 
 /*main content style*/
-.main {}
+.main {
+    height: 591px;
+}
 .main-left {
     min-width: 275px;
     display: flex;
@@ -87,14 +109,14 @@ a {
 .top-s {
     display: flex;
     flex-direction: row;
-    margin: 0 0 16px 0;
+    margin: 0 0 10px 0;
 }
 .bottom-s {}
 .main__header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 0 0 32px 0;
+    margin: 0 0 14px 0;
 }
 @media (max-width: 1200px) {
     .sms__info {
@@ -104,16 +126,10 @@ a {
         display: flex;
         flex-direction: column;
     }
-    .top-s {
-        justify-content: space-between;
-    }
 }
 @media (max-width: 992px) {
-    .main-left {
-        min-width: auto;
-    }
-    .main-center {
-        min-width: auto;
+    .header {
+        margin: 0 28px 0 0;
     }
 }
 @media (max-width: 767px) {
@@ -127,7 +143,7 @@ a {
 .main__header-btn {
     display: flex;
     flex-direction: row;
-    margin: 0 0 16px 0;
+    margin: 0 0 10px 0;
 }
 .main__header-btn button {
     margin: 0 12px 0 0;
@@ -153,21 +169,42 @@ a {
     display: flex;
     flex-direction: row;
 }
+.main__header-search input {
+    height: 30px;
+    background: #1D1C1C;
+    border: #DB9351 1px solid;
+    border-right: 0;
+    color: #fff;
+}
 .main__header-search button {
     width: 66px;
+    background: #1D1C1C;
+    color: #DB9351;
+    border: #DB9351 1px solid;
+    border-left: none;
 }
 
 /*main content sms style*/
-.main__sms {}
+.main__sms {
+    min-height: 100%;
+}
 .sms__list {}
 .sms__item {
     display: flex;
     flex-direction: row;
     align-items: center;
     height: 59px;
+    border: #212121 1px solid;
+    border-right: none;
+    border-left: none;
+}
+.sms__item:hover {
+    border: #DB9351 1px solid;
+    border-right: none;
+    border-left: none;
+    cursor: pointer;
 }
 .sms__input {
-    padding: 15px 0 0 0;
     margin: 0 19px 0 0;
 }
 .sms__user {
@@ -193,10 +230,26 @@ a {
     text-decoration: underline;
     font-weight: 700;
 }
-.sms__main-info {}
 .sms__arc {
     height: 16px;
     margin: 0 16px 0 0;
+}
+
+.sms__main-info {
+    position: relative;
+    width: 368px;
+}
+.gradient {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    background: -moz-linear-gradient(left,  hsla(0,0%,100%,0) 0%, hsla(0,0%,70%,0) 33%, hsla(0,0%,8%,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  hsla(0,0%,100%,0) 0%,hsla(0,0%,70%,0) 33%,hsla(0,0%,8%,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  hsla(0,0%,100%,0) 0%,hsla(0,0%,70%,0) 33%,hsla(0,0%,8%,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#151515',GradientType=1 ); /* IE6-9 */
 }
 .sms__main-text {}
 .sms__info {
@@ -212,6 +265,30 @@ a {
 }
 
 /*pages style*/
-.main__pages {}
-.page__link {}
-.active__link {}
+.main__footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+.main__pages {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 22px 0 0;
+}
+.page__link {
+    color: #fff;
+    margin: 0 22px 0 0;
+}
+.page__link:last-child {
+    margin: 0;
+}
+.active__link {
+    color: #DB9351;
+    border: #DB9351 1px solid;
+    border-radius: 50%;
+    padding: 5px 10px;
+}
+.arrow__link {}
+.page__arrow {}

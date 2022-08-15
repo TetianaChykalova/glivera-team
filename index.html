@@ -25,8 +25,8 @@
     <div class="header__div">
         <nav class="header__nav">
             <ul class="nav__list">
-                <li class="nav__item">
-                    <a href="#">Сообщения</a><span id="sms-count"></span>
+                <li class="nav__item ]">
+                    <a href="#" class="orange-bold">Сообщения</a><span class="orange" id="sms-count"></span>
                 </li>
                 <li class="nav__item">
                     <a href="#">Профиль</a>
@@ -44,9 +44,7 @@
         </nav>
     </div>
     <div class="header__div">
-        <div class="header__buy-div">
-            <a class="header__buy" href="#">Купить подписку</a>
-        </div>
+        <a class="header__buy" href="#">Купить подписку</a>
     </div>
 </header>
 
@@ -74,46 +72,53 @@
             </div>
         </div>
     </header>
+
 <!--            main content sms-->
     <section class="main__sms">
         <ul class="sms__list">
             <li class="sms__item">
-                <div class="main-left">
-                    <div class="sms__input">
-                        <input type="checkbox">
-                    </div>
-                    <div class="sms__user">
-                        <img src="img/icons/user.png" alt="user" class="sms__user-photo">
-                        <img src="img/icons/online.png" alt="online" class="sms__user-online">
-                        <nobr class="sms__user-name">Александр Антонов</nobr>
-                        <img src="img/icons/arc.png" alt="logo" class="sms__arc">
-                    </div>
+                <div class="sms__input">
+                    <input type="checkbox">
                 </div>
-                <div class="main-center">
-                    <div class="sms__main-info">
-                        <nobr class="sms__main-text">
-                            а почему на ноже нет ни одной царапины?
-                        </nobr>
-                    </div>
+                <div class="sms__user">
+                    <img src="img/icons/user.png" alt="user" class="sms__user-photo">
+                    <img src="img/icons/online.png" alt="online" class="sms__user-online">
+                    <nobr class="sms__user-name">Александр Антонов</nobr>
+                    <img src="img/icons/arc.png" alt="logo" class="sms__arc">
                 </div>
-                <div class="main-right">
-                    <div class="sms__info">
-                        <nobr><span class="sms__data">13/04/2018</span><span class="sms__time">14:02</span></nobr>
-                    </div>
+
+                <div class="sms__main-info">
+                    <nobr class="sms__main-text">
+                        а почему на ноже нет ни одной царапины?
+                    </nobr>
+                    <div class="gradient"></div>
+                </div>
+
+                <div class="sms__info">
+                    <nobr><span class="sms__data">13/04/2018</span><span class="sms__time">14:02</span></nobr>
                 </div>
             </li>
         </ul>
 
 <!--        pages-->
     </section>
-    <footer class="main__pages">
-        <a href="#" class="page__link">1</a>
+    <footer class="main__footer">
+        <div class="main__pages">
+            <a href="#" class="page__link active__link">1</a>
+            <a href="#" class="page__link">2</a>
+            <a href="#" class="page__link">3</a>
+            <a href="#" class="page__link">4</a>
+        </div>
+        <a href="#" class="arrow__link">
+            <img src="img/icons/arrow.png" alt="arrow" class="page__arrow">
+        </a>
     </footer>
 </main>
 
 <!--container adaptive/responsible-->
 </div>
 
+<!--templates-->
 <template id="sms__item">
     <li class="sms__item">
         <div class="main-left">
